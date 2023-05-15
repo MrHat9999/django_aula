@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block conteudo %}
+<h2>Contatos</h2>
+
+<ul>
+    {% for x in contatos %}
+      <li><a href="{% url 'detalhes' x.id %}">{{x.nome}} - {{x.fone}}</a></li>
+    {% endfor %}
+</ul>
+
+<br/><br/>
+<a href="{% url 'contato' %}">Novo Contato</a>
+<br/>
+{% endblock %}

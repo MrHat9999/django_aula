@@ -1,0 +1,13 @@
+{% extends "master.html" %}
+
+{% block titulo %}Contato Cadastro{% endblock %}
+
+{% block conteudo %}
+<h2>Cadastro de Contato</h2>
+<form method="post" action="{% url 'contato' %}">{% csrf_token %}
+{{ form }}
+<input type="submit" value="Enviar" />
+</form>
+<br/><br/>
+<a href="{% url 'contatos' %}">Voltar</a>
+{% endblock %}

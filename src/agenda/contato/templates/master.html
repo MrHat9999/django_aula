@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block titulo %}Agenda{% endblock %}</title>
+    </head>
+<body>
+
+<h1><img src="{% static 'logo.png' %}" width="50" height="50" />Agenda</h1>
+
+{% block conteudo %}
+{% endblock %}
+
+
+<br/><br/><br/>
+Desenvolvido por MrHat
+
+</body>
+</html>

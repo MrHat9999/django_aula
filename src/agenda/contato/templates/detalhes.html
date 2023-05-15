@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block titulo %}Contato Detalhes{% endblock %}
+
+{% block conteudo %}
+<h2>Contato {{ contato.id }}</h2>
+{# exemplo de formulário #}
+<ul>
+    <li>Nome: {{ contato.nome }}</li>
+    <li>Sobrenome: {{ contato.sobrenome }}</li>
+    <li>Fone: {{ contato.fone }}</li>
+    <li>Tipo: {{ contato.tipo }}</li>
+    <li>Categoria: {{ contato.categoria.nome|title }}</li>
+    <li>Dt Cadastro: {{ contato.data_cadastro|date:"d/m/Y H:m:s" }}</li>
+    <li>Dt Atualização: {{ contato.data_atualizacao|date:"d/m/Y H:m:s" }}</li>
+</ul>
+<br/><br/>
+<a href="{% url 'contatos' %}">Voltar</a>
+{% endblock %}
