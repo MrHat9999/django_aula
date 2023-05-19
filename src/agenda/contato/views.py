@@ -19,7 +19,7 @@ def contato(request):
 
 
 def contatos(request):
-    lista_contatos = Contato.objects.all().values()
+    lista_contatos = Contato.objects.all().values('id', 'nome', 'fone')
     context = {"contatos": lista_contatos}
     return render(request, "contatos.html", context)
 
