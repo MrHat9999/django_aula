@@ -1,4 +1,5 @@
 from django.db import models
+from django.core import validators
 
 # Create your models here.
 
@@ -11,7 +12,9 @@ class Categoria(models.Model):
 
 
 class Contato(models.Model):
-    nome = models.CharField(max_length=255)
+    nome = models.CharField(max_length=255, validators=[
+        validators.MinLengthValidator(3),
+        validators.MaxLengthValidator(60)])
     sobrenome = models.CharField(max_length=255)
     fone = models.IntegerField(verbose_name="telefone")
     tipo = models.CharField(choices=(("c", "Celular"), ("f", "Fixo")), max_length=1)

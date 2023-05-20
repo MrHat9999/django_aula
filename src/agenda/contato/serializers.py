@@ -1,5 +1,4 @@
-from rest_framework import serializers
-from rest_framework import permissions
+from rest_framework import permissions, serializers
 
 from .models import Categoria, Contato
 
@@ -7,8 +6,7 @@ from .models import Categoria, Contato
 class CategoriaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Categoria
-        fields = '__all__'
-        
+        fields = "__all__"
 
 
 class ContatoSerializer(serializers.ModelSerializer):
@@ -16,4 +14,4 @@ class ContatoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Contato
-        fields = '__all__'
+        fields = "__all__"

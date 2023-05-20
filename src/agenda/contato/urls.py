@@ -1,9 +1,8 @@
-from django.urls import path, include
-
+from django.urls import include, path
 from rest_framework_nested import routers
-from .api import CategoriaViewSet, ContatoViewSet
 
 from . import views
+from .api import CategoriaViewSet, ContatoViewSet
 
 api_router = routers.DefaultRouter()
 api_router.register(r"categorias", CategoriaViewSet)
@@ -12,11 +11,7 @@ categorias_router = routers.NestedDefaultRouter(
     api_router, r"categorias", lookup="categoria"
 )
 
-categorias_router \
-    .register(
-    r"contatos", 
-    ContatoViewSet, 
-    basename="categoria-contatos")
+categorias_router.register(r"contatos", ContatoViewSet, basename="categoria-contatos")
 
 urlpatterns = [
     path("contato/", views.contato, name="contato"),
